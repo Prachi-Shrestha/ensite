@@ -11,63 +11,64 @@ import axios from 'axios';
 import LoginIcon from '@mui/icons-material/Login';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { FlareSharp } from '@mui/icons-material';
 
-function Login() {
-  const navigate = useNavigate();
+function TeacherLogin() {
+    const navigate = useNavigate();
 
-  const [authenticated, setauthenticated] = useState(
-    localStorage.getItem(localStorage.getItem("authenticated") || false)
-  );
+    const [authenticated, setauthenticated] = useState(
+        localStorage.getItem(localStorage.getItem("authenticated") || false)
+    );
 
-    const [values, setValues] = React.useState({
+    const[values, setValues] = React.useState({
         Username: '',
         password: '',
         showPassword: false,
     });
-    
     const loginApi = (e) => {
-      e.preventDefault();
-        axios.post(`${process.env.REACT_APP_base_URL}StudentLogin`
-        , {
-            "userName": values.Username,
-            "userPassword": values.password
-          }
-      )
-        .then(response => {
-          console.log(response);
-          localStorage.setItem("authenticated", true);
-          localStorage.setItem("token", response.data.token);
-          navigate("/student");
-          console.log(response);
-        })
-        .catch(error => {
-          console.log(error);
-        })
-    }
-      const handleChange = (prop) => (event) => {
-        setValues({ ...values, [prop]: event.target.value });
-      };
-    
-      const handleClickShowPassword = () => {
-        setValues({
-          ...values,
-          showPassword: !values.showPassword,
-        });
-      };
-    
-      const handleMouseDownPassword = (event) => {
-        event.preventDefault();
-      };
- 
+        e.preventDefault();
+          axios.post(`${process.env.REACT_APP_base_URL}TeacherLogin`
+          , {
+              "userName": values.Username,
+              "userPassword": values.password
+            }
+        )
+          .then(response => {
+            console.log(response);
+            localStorage.setItem("authenticated", true);
+            localStorage.setItem("token", response.data.token);
+            navigate("/teacher");
+            console.log(response);
+          })
+          .catch(error => {
+            console.log(error);
+          })
+      }
+        const handleChange = (prop) => (event) => {
+          setValues({ ...values, [prop]: event.target.value });
+        };
+      
+        const handleClickShowPassword = () => {
+          setValues({
+            ...values,
+            showPassword: !values.showPassword,
+          });
+        };
+      
+        const handleMouseDownPassword = (event) => {
+          event.preventDefault();
+        };
+
   return (
-    <div align= 'center'>
-    <Typography marginTop= '60px' paddingBottom= '25px'>
+    <div align='center'>
+    <Typography marginTop= '50px'>
     <Typography sx={{fontWeight: '400', fontSize: '16px'}}> Hey there, </Typography>
     <Typography sx={{fontWeight: '700', fontSize: '20px'}}> Welcome To </Typography>
     <Typography sx={{fontWeight: '400', fontSize: '24px'}}> SMS </Typography>
     </Typography>
-    <Grid direction='column'>
+    <Typography variant='subtitle2' paddingTop='80px'> Teacher Login </Typography>
     <form onSubmit={loginApi}>
+    <Grid container flexDirection='column' alignItems='center'>
         <TextField
           label="Username"
           id="outlined-start-adornment"
@@ -106,7 +107,8 @@ function Login() {
                 label="Password"
             />
         </FormControl>
-        <Typography variant='subtitle2'> Forgot you password? </Typography>
+        </Grid>
+        <Typography variant='subtitle2' color='#ADA4A5'> Forgot your password? </Typography>
         <Button variant="contained" onClick={loginApi} 
         sx={{
             position: 'relative',
@@ -116,14 +118,14 @@ function Login() {
             textTransform: 'none',
             background: 'linear-gradient(to left, #226CE0, #FFFAFF 124.45%)',
             boxShadow: 0,
-            bottom: '-30ch',
+            bottom: '-22ch',
             }}> 
             <LoginIcon sx={{pr: '10px'}}/> Login
         </Button>
     </form>
-    </Grid>
     </div>
   )
 }
 
-export default Login
+
+export default TeacherLogin
