@@ -8,7 +8,7 @@ import { HashRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter basename='https://prachi-shrestha.github.io/ensite/'>
+    <HashRouter>
       <App />
     </HashRouter>
   </React.StrictMode>
