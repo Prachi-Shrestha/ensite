@@ -14,7 +14,6 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
 const Search = styled("div")(({ theme }) => ({

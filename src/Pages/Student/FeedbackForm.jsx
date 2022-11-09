@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom';
+import React from 'react'
 import { Box, Button, Container, TextField } from '@mui/material'
 
 function FeedbackForm() {

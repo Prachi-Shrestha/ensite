@@ -10,14 +10,14 @@ import { Button, FormControl, Grid, InputLabel, TextField, Typography } from '@m
 import axios from 'axios';
 import LoginIcon from '@mui/icons-material/Login';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 function StudentLogin() {
   const navigate = useNavigate();
 
-  const [authenticated, setauthenticated] = useState(
-    localStorage.getItem(localStorage.getItem("authenticated") || false)
-  );
+  // const [authenticated, setauthenticated] = useState(
+  //   localStorage.getItem(localStorage.getItem("authenticated") || false)
+  // );
 
     const [values, setValues] = React.useState({
         Username: '',

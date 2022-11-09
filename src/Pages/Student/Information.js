@@ -21,7 +21,7 @@ const cardStyles ={
 const Information = () => {
 
   const [data, setData] = useState([])
-  const [program, setProgram] = useState([])
+  // const [program, setProgram] = useState([])
 
   useEffect(() => {
     console.log(process.env);
@@ -39,23 +39,23 @@ const Information = () => {
       setData(null);
     })
   },[]);
-  useEffect(() => {
-    axios.get(
-      `${process.env.REACT_APP_base_URL}/api/Setup/ProgramMaster?id=${data.program}`,
-      {
-        headers: {
-          'Authorization': 'Bearer ' + localStorage.getItem("token")
-        }
-      }
-    )
-    .then(response => {
-      setProgram(response.data);
-      console.log(response.data);
-    })
-    .catch(error => {
-      setProgram(null);
-    })
-  },[data]);
+  // useEffect(() => {
+  //   axios.get(
+  //     `${process.env.REACT_APP_base_URL}/api/Setup/ProgramMaster?id=${data.program}`,
+  //     {
+  //       headers: {
+  //         'Authorization': 'Bearer ' + localStorage.getItem("token")
+  //       }
+  //     }
+  //   )
+  //   .then(response => {
+  //     setProgram(response.data);
+  //     console.log(response.data);
+  //   })
+  //   .catch(error => {
+  //     setProgram(null);
+  //   })
+  // },[data]);
   
   return (
     <div>
