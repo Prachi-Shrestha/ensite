@@ -1,6 +1,6 @@
 import React from 'react'
 import { Avatar, Button, Grid, Stack, Typography } from '@mui/material'
-import { Link as RouterLink, MemoryRouter } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import { Container } from '@mui/system';
 
 const LinkBehavior = React.forwardRef((props, ref) => (

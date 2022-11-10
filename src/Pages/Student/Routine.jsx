@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom';
-import { Container, Grid, MenuItem } from '@mui/material'
+import { Button, Container, Grid, MenuItem } from '@mui/material'
 import ComponentHeader from '../../Components/Common/ComponentHeader'
 import SelectInput from '../../Components/Common/SelectInput'
+import { Box } from '@mui/system';
 
 function Routine() {
     const [authenticated, setauthenticated] = useState(localStorage.getItem("authenticated"));
@@ -54,6 +55,9 @@ else{
                     </SelectInput>
                 </Grid>
             </Grid>
+            <Box textAlign='center'>
+                <Button variant='contained'> Search </Button>
+            </Box>
         </Container>
     </div>
   )

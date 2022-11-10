@@ -35,7 +35,7 @@ else{
                 </Grid>
             </Grid>
             <Box textAlign='center'>
-                <Button variant="contained">Search</Button>
+              <Button variant="contained">Search</Button>
             </Box>
         </Container>   
     </div>
